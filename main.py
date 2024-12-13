@@ -12,8 +12,6 @@
 
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay
@@ -67,33 +65,6 @@ print(ss.corr())
 # In[64]:
 
 
-plt.figure(figsize=(12, 8))
-plt.subplot(2, 3, 1)
-sns.countplot(x='income', hue='sm_li', data=ss)
-plt.title('Income vs LinkedIn Usage')
-
-plt.subplot(2, 3, 2)
-sns.countplot(x='educ2', hue='sm_li', data=ss)
-plt.title('Education vs LinkedIn Usage')
-
-plt.subplot(2, 3, 3)
-sns.countplot(x='par', hue='sm_li', data=ss)
-plt.title('Parenthood vs LinkedIn Usage')
-
-plt.subplot(2, 3, 4)
-sns.countplot(x='marital', hue='sm_li', data=ss)
-plt.title('Marital Status vs LinkedIn Usage')
-
-plt.subplot(2, 3, 5)
-sns.countplot(x='gender', hue='sm_li', data=ss)
-plt.title('Gender vs LinkedIn Usage')
-
-plt.subplot(2, 3, 6)
-sns.histplot(data=ss, x='age', hue='sm_li', multiple='stack', bins=20)
-plt.title('Age Distribution vs LinkedIn Usage')
-
-plt.tight_layout()
-plt.show()
 
 
 # Q4. Create a target vector (y) and feature set (X)
@@ -155,8 +126,6 @@ cm = confusion_matrix(y_test, y_pred)
 
 cm_display = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=[0, 1])
 cm_display.plot(cmap='Blues')
-plt.title('Confusion Matrix')
-plt.show()
 
 
 # The accuracy score gives you a high-level view of the model's performance, while the confusion matrix offers a more granular understanding of how well the model performed on each class. When you analyze a confusion matrix, you can see model behavior and where the errors are happening in terms of False Positive or False Negative rates, which could then lead you to tune your model or use new features to mitigate any issues. The darkest shade of blue is decribing the true positive scores that we predicited to be positive which had a score of 98, the score of 63 are the false positive precicted, 24 is the false negative predicited, and 67 is the true negative predicted
