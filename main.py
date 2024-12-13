@@ -16,7 +16,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import classification_report
-file_path = '/Users/destinyfloyd/Desktop/Programming-II/social_media_usage.csv'
+file_path = 'social_media_usage.csv'
 s = pd.read_csv(file_path)
 s.shape
 
